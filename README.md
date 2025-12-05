@@ -1,6 +1,6 @@
 # esp32_dual_serial_and_mcp2515
 
-Dual MCP2515 (16 MHz) + Dual SLCAN bridge for ESP32
+Dual MCP2515 (16 MHz) + Dual SLCAN  for ESP32
 ---------------------------------------------------
 
 USB  <---SLCAN--->  CAN1 (MCP2515 #1)
