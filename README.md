@@ -57,7 +57,7 @@ Important notes
 Software / Build
 - Arduino IDE:
   - Install ESP32 board support (Espressif) and select the correct board.
-  - Install the MCP_CAN library (e.g., by Cory J. Fowler or compatible library that provides MCP_CAN and MCP_* constants).
+  - Install the MCP_CAN library  by Cory J. Fowler 
   - Open the .ino/.cpp file in this repo, compile and upload.
 
 - PlatformIO:
@@ -89,7 +89,6 @@ Troubleshooting
 
 Files added
 - README.md — this document
-- DESCRIPTION.md — short Spanish description (in repo)
 - SCHEMATIC.svg — wiring diagram (vector) showing ESP32, SPI lines, CS, INT and Serial1 pins
 
 License
