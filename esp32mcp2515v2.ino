@@ -146,7 +146,7 @@ void setup() {
     Serial.println("CAN2 FAIL");
   }
   CAN2.setMode(MCP_NORMAL);
-
+  SPI.setClockDivider(SPI_CLOCK_DIV2); 
   delay(200);
   Serial.println("Dual MCP2515 + Dual SLCAN READY");
 }
