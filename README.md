@@ -49,8 +49,7 @@ Wiring / Pinout
   - Baud: 115200 in sketch
 
 Important notes
-- MCP2515 modules often include the CAN transceiver (e.g., TJA1050). Make sure the module uses 3.3V levels and the transceiver matches your CAN bus voltage/signalling.
-- MCP2515 INT pins are typically open-drain: enable (or ensure) a pull-up (many modules include a pull-up). If you see unstable behavior, add a 10k pull-up to 3.3V on each INT line.
+- MCP2515 modules often include the CAN transceiver (e.g., TJA1050). 
 - SPI pin assignments can vary by board. If your ESP32 board exposes different default SPI pins or you want to use HSPI, call SPI.begin(SCK, MISO, MOSI) with explicit pins or adapt wiring.
 - CAN bitrate is currently set to 500 kbps in the code. Change the CAN begin parameters in the sketch if you need a different bitrate or crystal frequency.
 
@@ -60,9 +59,6 @@ Software / Build
   - Install the MCP_CAN library  by Cory J. Fowler 
   - Open the .ino/.cpp file in this repo, compile and upload.
 
-- PlatformIO:
-  - Create a platformio.ini for your board, add the MCP_CAN library as dependency or include it in lib/.
-  - Build & upload to the selected ESP32 board.
 
 SLCAN protocol (brief)
 - This firmware expects SLCAN-formatted frames ending with CR (\r).
@@ -79,26 +75,15 @@ SLCAN protocol (brief)
   - T1ABCDEFF3A1B2C\r
 
 Usage examples
-- Connect MCP2515 #1 via USB Serial to PC and use SavvyCAN or slcan utilities (e.g., slcand + cansend/candump) to send/receive CAN on CAN1.
+- Connect MCP2515 #1 via USB Serial to PC at 115200 and use SavvyCAN or slcan utilities (e.g., slcand + cansend/candump) to send/receive CAN on CAN1.
 - Connect another serial terminal or device to Serial1 pins (16/17) at 115200 to talk SLCAN to CAN2.
 
 Troubleshooting
 - If CAN modules don't initialize: check SPI wiring, CS pins, and that MCP_16MHZ constant matches the module's crystal (16 MHz).
-- If interrupts aren't detected: verify INT pins wiring, ensure pull-ups exist, and that interrupts are configured as digital inputs.
 - If you see garbled serial data: check baud rates and wiring, ensure TX/RX cross (TX->RX, RX->TX).
 
-Files added
-- README.md — this document
-- SCHEMATIC.svg — wiring diagram (vector) showing ESP32, SPI lines, CS, INT and Serial1 pins
 
-License
-- Add your preferred license to the repository. Currently no license file is included — add LICENSE if you want to allow reuse.
 
 Credits
-- Uses MCP_CAN library and Arduino/ESP32 core. Original code and wiring by oscarmmayorga.
+- Uses MCP_CAN library by Cory J. Fowler 
 
-If you want, I can:
-- Add a PlatformIO example/project file (platformio.ini)
-- Produce PNG export of the SVG schematic
-- Add a LICENSE file (MIT suggested)
-- Add a minimal Arduino .ino with comments and compile instructions tailored to the Arduino IDE
