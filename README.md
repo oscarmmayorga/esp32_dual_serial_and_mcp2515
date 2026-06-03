@@ -18,6 +18,7 @@ Features
 - Converts between SLCAN frames and MCP2515 CAN frames in both directions
 - Default CAN bitrate: 500 kbps (set in code)
 - Uses Arduino-style HardwareSerial(1) for the second serial port
+- Both serial at 115200
 
 Status
 - ESP32 code provided in the repository (main sketch).
