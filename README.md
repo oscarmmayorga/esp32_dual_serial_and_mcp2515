@@ -34,7 +34,7 @@ Wiring / Pinout
   - INT -> GPIO 4   (CAN1_INT)
   - VCC -> 3.3V
   - GND -> GND
-  - CANH/CANL -> CAN bus #1 (via transceiver on module, e.g., TJA1050)
+  - CANH/CANL -> CAN bus #1 
 
 - MCP2515 #2 (connected to Serial1):
   - CS  -> GPIO 15  (CAN2_CS)
