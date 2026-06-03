@@ -4,6 +4,7 @@ Dual MCP2515 (16 MHz) + Dual SLCAN  for ESP32
 ---------------------------------------------------
 
 USB  <---SLCAN--->  CAN1 (MCP2515 #1)
+
 Serial1 <---SLCAN---> CAN2 (MCP2515 #2)
 
 This project provides firmware for an ESP32 that bridges two MCP2515 CAN controllers to two serial endpoints using the SLCAN protocol:
